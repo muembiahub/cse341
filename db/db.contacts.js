@@ -1,3 +1,5 @@
+use ("cse341");
+
 db.contacts.insertMany([
   {
     firstName: "Alice",

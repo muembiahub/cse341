@@ -26,7 +26,6 @@ router.get('/contact', async (req, res) => {
     if (!contactId) {
       return res.status(400).json({ message: "ID query parameter is required" });
     }
-
     const database = client.db('cse341');
     const contactsCollection = database.collection('contacts');
 
@@ -42,5 +41,5 @@ router.get('/contact', async (req, res) => {
     res.status(500).json({ message: "Invalid ID format or server error" });
   }
 });
-
+// 
 module.exports = router;
