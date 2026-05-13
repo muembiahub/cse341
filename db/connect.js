@@ -22,4 +22,8 @@ const connectDB = async () => {
   }
 };
 
-module.exports = { client, connectDB };
+//  variable for database connection
+const database = client.db('cse341');
+const contactsCollection = database.collection('contacts');
+
+module.exports = { client, connectDB, database, contactsCollection };
