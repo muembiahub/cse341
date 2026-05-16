@@ -7,10 +7,7 @@ const  { getAllContacts, getContactById, createContact, updateContact, deleteCon
  
 const router = express.Router();
 
-
-
-//  Validation middleware
-
+//  validation for fields
 const validationFields = [
   body("firstName").notEmpty().withMessage("First name is required"),
   body("lastName").notEmpty().withMessage("Last name is required"),
@@ -19,9 +16,6 @@ const validationFields = [
   body("birthday").notEmpty().withMessage("Birthday is required"),
 ];
 
-
-
-//  
 router.use('/', require('./swagger'));
 // ✅ GET all contacts
 router.get('/', getAllContacts);
