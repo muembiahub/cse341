@@ -5,7 +5,7 @@
     "description": "CSE 341 Contacts Project API Documentation",
     "version": "1.0.0"
   },
-  "host": "https://cse341-hcke.onrender.com",
+  "host": "cse341-hcke.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
