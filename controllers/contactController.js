@@ -110,6 +110,7 @@ const updateContact =  async (req, res) => {
     };
 };
 
+
 module.exports = {
     homePage,
     getAllContacts,
