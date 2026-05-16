@@ -9,7 +9,7 @@ const homePage = (req, res) => {
 const getAllContacts = async (req, res) => {
         const contact = await mongodb
             .getdatabase()
-            .db()
+            .db('cse341')
             .collection('contacts')
             .find().toArray().then((contact) => {
                 res.setHeader('Content-Type', 'application/json');
@@ -23,7 +23,7 @@ const getContactById = async (req, res) => {
     const contactId = new objectId(req.params.id);
         const contact = await mongodb
             .getdatabase()
-            .db()
+              .db('cse341')
             .collection('contacts')
             .find({ _id: contactId });
             contact.toArray().then ((contact) => {
@@ -47,7 +47,7 @@ const addContact = async (req, res) => {
     };
       const response = await mongodb
             .getdatabase()
-            .db()
+            .db('cse341')
             .collection('contacts')
             .insertOne(newContact);
 
@@ -68,7 +68,7 @@ const deleteContact = async (req, res) => {
     const contactId = new objectId(req.params.id);
       const response = await mongodb
             .getdatabase()
-            .db()
+            .db('cse341')
             .collection('contacts')
             .deleteOne({ _id: contactId });
 
@@ -94,7 +94,7 @@ const updateContact =  async (req, res) => {
     };
       const response = await mongodb
             .getdatabase()
-            .db()
+            .db('cse341')
             .collection('contacts')
             .replaceOne({ _id: contactId }, newContact);
 
