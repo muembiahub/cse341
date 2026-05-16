@@ -1,0 +1,37 @@
+### Root Route
+GET http://localhost:3000/
+
+### GET All Contacts
+GET http://localhost:3000/contact
+
+### GET One Contact
+GET http://localhost:3000/contact/6a08bc29ec62d423354ad50c
+
+### POST Create Contact
+POST http://localhost:3000/contact/add HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Joden",
+  "lastName": "Mubemba",
+  "email": "sarah@email.com",
+  "favoriteColor": "Blue",
+  "birthday": "2000-05-10"
+}
+
+### PUT Update Contact
+PUT http://localhost:3000/contact/update/6a08bc29ec62d423354ad50c HTTP/1.1
+Content-Type: application/json
+
+{
+  "firstName": "Joden",
+  "lastName": "Updated",
+  "email": "updated@email.com",
+  "favoriteColor": "Green",
+  "birthday": "2001-01-01"
+}
+
+### DELETE Contact
+DELETE http://localhost:3000/contact/delete/6a08b1cbcdbb8d2f91d474ca HTTP/1.1
+
+

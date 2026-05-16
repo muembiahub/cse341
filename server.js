@@ -1,13 +1,19 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-
 const mongodb = require('./config/database');
+const bodyParser = require('body-parser');
 
 
 
-app.use(express.json());
-
+app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Z-key');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next(); 
+});
+app.use('/', require('./routes/swagger'));
 app.use('/', require('./routes/contact'));
 
 mongodb.initdb((err) => {
