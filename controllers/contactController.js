@@ -3,7 +3,7 @@ const objectId = require('mongodb').ObjectId;
 
 
 const homePage = (req, res) => {
-    res.status(200).json({message: 'Welcome to the contact API'});
+    res.status(200).send({message: 'Welcome to the contact API'});
 }
 
 const getAllContacts = async (req, res) => {
